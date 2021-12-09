@@ -167,8 +167,8 @@ interface PriceDate {
 function Coin() {
   const { coinId } = useParams<RouteParams>();
   const { state } = useLocation<RouterState>();
-  const priceMatch = useRouteMatch(`/${coinId}/price`);
-  const chartMatch = useRouteMatch(`/${coinId}/chart`);
+  const priceMatch = useRouteMatch(`/BitCoin/${coinId}/price`);
+  const chartMatch = useRouteMatch(`/BitCoin/${coinId}/chart`);
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoDate>(
     ["info", coinId],
     () => fetchCoinInfo(coinId)
@@ -253,19 +253,19 @@ function Coin() {
 
           <Tabs>
             <Tab isActive={chartMatch !== null}>
-              <Link to={`/${coinId}/chart`}>Chart</Link>
+              <Link to={`/BitCoin/${coinId}/chart`}>Chart</Link>
             </Tab>
 
             <Tab isActive={priceMatch !== null}>
-              <Link to={`/${coinId}/price`}>Price</Link>
+              <Link to={`/BitCoin/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
 
           <Switch>
-            <Route path={`/${coinId}/price`}>
+            <Route path={`/BitCoin/${coinId}/price`}>
               <Price coinId={coinId} />
             </Route>
-            <Route path={`/${coinId}/chart`}>
+            <Route path={`/BitCoin/${coinId}/chart`}>
               <Chart coinId={coinId} />
             </Route>
           </Switch>

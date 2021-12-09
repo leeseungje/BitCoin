@@ -11,10 +11,10 @@ function Router({}: IRouterProps) {
     <>
       <BrowserRouter>
         <Switch>
-          <Route path="/:coinId">
+          <Route path="/BitCoin/:coinId">
             <Coin />
           </Route>
-          <Route path="/">
+          <Route path="/BitCoin/">
             <Coins />
           </Route>
         </Switch>
