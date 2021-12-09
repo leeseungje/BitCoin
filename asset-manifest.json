@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/BitCoin/static/js/main.9258fd4c.chunk.js",
-    "main.js.map": "/BitCoin/static/js/main.9258fd4c.chunk.js.map",
+    "main.js": "/BitCoin/static/js/main.c6983dc7.chunk.js",
+    "main.js.map": "/BitCoin/static/js/main.c6983dc7.chunk.js.map",
     "runtime-main.js": "/BitCoin/static/js/runtime-main.9fc932ff.js",
     "runtime-main.js.map": "/BitCoin/static/js/runtime-main.9fc932ff.js.map",
     "static/js/2.099f6133.chunk.js": "/BitCoin/static/js/2.099f6133.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.9fc932ff.js",
     "static/js/2.099f6133.chunk.js",
-    "static/js/main.9258fd4c.chunk.js"
+    "static/js/main.c6983dc7.chunk.js"
   ]
 }
