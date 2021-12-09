@@ -1,3 +1,4 @@
+import React from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
 import { fetchCoinLatest } from "../api";
@@ -47,7 +48,7 @@ function Price({ coinId }: PriceProps) {
     ["latest", coinId],
     () => fetchCoinLatest(coinId),
     {
-      refetchInterval: 10000
+      refetchInterval: 10000,
     }
   );
   return (
@@ -58,19 +59,19 @@ function Price({ coinId }: PriceProps) {
         <PriceWrap>
           <PriceTxt>
             <Title>Open Price </Title>
-            <Coast>${dataSource[0].open.toFixed(2)}</Coast>
+            <Coast>${dataSource?.[0].open.toFixed(2)}</Coast>
           </PriceTxt>
           <PriceTxt>
             <Title>Close Price </Title>
-            <Coast>${dataSource[0].close.toFixed(2)}</Coast>
+            <Coast>${dataSource?.[0].close.toFixed(2)}</Coast>
           </PriceTxt>
           <PriceTxt className="high">
             <Title>high Price</Title>
-            <Coast>${dataSource[0].high.toFixed(2)}</Coast>
+            <Coast>${dataSource?.[0].high.toFixed(2)}</Coast>
           </PriceTxt>
           <PriceTxt className="low">
             <Title>low Price </Title>
-            <Coast>${dataSource[0].low.toFixed(2)}</Coast>
+            <Coast>${dataSource?.[0].low.toFixed(2)}</Coast>
           </PriceTxt>
         </PriceWrap>
       )}

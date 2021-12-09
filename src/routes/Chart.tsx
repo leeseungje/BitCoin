@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchCoinHistory } from "../api";
 import ApexChart from "react-apexcharts";
+import React from "react";
 
 interface chartProps {
   coinId: string;
@@ -20,7 +21,7 @@ function Chart({ coinId }: chartProps) {
     ["ohlcv", coinId],
     () => fetchCoinHistory(coinId),
     {
-      refetchInterval: 10000
+      refetchInterval: 10000,
     }
   );
 
@@ -34,19 +35,19 @@ function Chart({ coinId }: chartProps) {
           series={[
             {
               name: "candlestick",
-              data: dataSource.map((item) => {
+              data: dataSource?.map((item) => {
                 const list = [
                   item.open.toFixed(2),
                   item.high.toFixed(2),
                   item.low.toFixed(2),
-                  item.close.toFixed(2)
+                  item.close.toFixed(2),
                 ];
                 return {
                   x: new Date(item.market_cap),
-                  y: list
+                  y: list,
                 };
-              })
-            }
+              }),
+            },
           ]}
           options={{
             chart: {
@@ -54,30 +55,30 @@ function Chart({ coinId }: chartProps) {
               height: 300,
               width: 500,
               toolbar: {
-                show: false
+                show: false,
               },
-              background: "white"
+              background: "white",
             },
             title: {
               text: `${coinId} Chart`,
-              align: "right"
+              align: "right",
             },
             yaxis: {
               tooltip: {
-                enabled: true
-              }
+                enabled: true,
+              },
             },
             xaxis: {
               labels: {
-                show: false
+                show: false,
               },
               axisTicks: {
-                show: false
+                show: false,
               },
               axisBorder: {
-                show: false
-              }
-            }
+                show: false,
+              },
+            },
           }}
         />
       )}

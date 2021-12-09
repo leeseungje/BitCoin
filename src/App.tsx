@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./theme";
 import { useState } from "react";
+import React from "react";
 
 const ToggleButton = styled.input<{ active: boolean }>`
   z-index: 3;

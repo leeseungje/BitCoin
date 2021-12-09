@@ -1,3 +1,4 @@
+import React from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
@@ -77,7 +78,7 @@ function Coins() {
               <Link
                 to={{
                   pathname: `/${coin.id}/chart`,
-                  state: { name: coin.name }
+                  state: { name: coin.name },
                 }}
               >
                 <Img

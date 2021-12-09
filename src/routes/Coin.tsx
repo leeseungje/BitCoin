@@ -5,7 +5,7 @@ import {
   Switch,
   useLocation,
   useParams,
-  useRouteMatch
+  useRouteMatch,
 } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -13,6 +13,7 @@ import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import Chart from "./Chart";
 import Price from "./Price";
 import { motion } from "framer-motion";
+import React from "react";
 
 const Title = styled.h1`
   font-size: 48px;
@@ -180,12 +181,12 @@ function Coin() {
   const arrowVariant = {
     hidden: {
       pathLength: 0,
-      fill: "rgba(57, 155, 155, 0)"
+      fill: "rgba(57, 155, 155, 0)",
     },
     visible: {
       pathLength: 1,
-      fill: "rgba(57, 155, 155, 1)"
-    }
+      fill: "rgba(57, 155, 155, 1)",
+    },
   };
   return (
     <Container>
@@ -199,12 +200,12 @@ function Coin() {
               animate="visible"
               transition={{
                 default: {
-                  duration: 3
+                  duration: 3,
                 },
                 fill: {
                   duration: 1,
-                  delay: 2
-                }
+                  delay: 2,
+                },
               }}
             ></motion.path>
           </Arrow>
@@ -235,7 +236,7 @@ function Coin() {
             </OverviewItem>
             <OverviewItem>
               <span>Price:</span>
-              <span>${tickersData?.quotes.USD.price.toFixed(3)}</span>
+              <span>${tickersData?.quotes?.USD.price.toFixed(3)}</span>
             </OverviewItem>
           </Overview>
           <Description>{infoData?.description}</Description>
